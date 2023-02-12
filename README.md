@@ -1,7 +1,7 @@
 # ChatGPT BizWechat Bot
-A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/chatgpt/) to provide answers. Ready to use with minimal configuration required. Based on [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) and [terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT)
+A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/chatgpt/) to provide answers. Ready to use with minimal configuration required. Based on [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) 
 
-基于 [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) 和 [terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT) 开发的企业微信聊天机器人
+基于 [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) 开发的企业微信聊天机器人
 
 ## Screeeshots
 <img src="https://user-images.githubusercontent.com/4464307/206640973-a9790f2f-2452-4edc-b82f-e37bfface7dd.png" width="250"/>
@@ -19,12 +19,23 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 - A BizWechat Coporation Account / 企业微信企业账号
 - Knowledge of how to deploy a self host bot in bizwechat / 了解如何搭建企业微信机器人 (如何获取 `Token`, `EncodingAESKey`, `CorpID`, `SECRET`, `agent_id` 等参数)
 - An [OpenAI](https://openai.com) account / [OpenAI](https://openai.com) 账号
+- (optional but recommended) A ChatGPT proxy address, you can use [acheong08/ChatGPT-Proxy](https://github.com/acheong08/ChatGPT-Proxy) to host a bypass server yourself
 
 ## Getting started
 
-### Install with Docker
+### Install with Docker Compose
 ```bash
-docker run -d --name wx-chatbot -p 8868:8868 -v <YOUR PATH TO CONFIG FILE>:/wx-chatbot/config.yaml gyronee/chatgpt-bizwechat-bot:latest
+version: '3'
+services:
+  chatgpt:
+    image: sheepgreen/chatgpt-wework
+#   environment:
+#     - CHATGPT_BASE_URL=上面说的ChatGPT代理地址，不填默认使用作者的地址，可能存在请求频率等限制
+    volumes:
+      - ./config.yaml:/wx-chatbot/config.yaml
+    ports:
+      - "8868:8868"
+    restart: always
 ```
 
 the bot url is `http(s)://host:port/chat`
@@ -33,7 +44,7 @@ the bot url is `http(s)://host:port/chat`
 1. Clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/Gyronee/chatgpt-bizwechat-bot.git
+git clone https://github.com/slippersheepig/chatgpt-bizwechat-bot.git
 cd chatgpt-bizwechat-bot
 ```
 
@@ -51,11 +62,9 @@ wx-bot:
   CorpID: 
   SECRET: 
   agent_id: 
-// session_token or email/password, choose one  token 和 账户密码二选一即可
 chatgpt: 
-  session_token: "<__Secure-next-auth.session-token>"
-  email: "<YOUR_EMAIL>",
-  password: "<YOUR_PASSWORD>"
+  email: 直接填邮箱，无需引号包含
+  password: 直接填密码，无需引号包含
 ```
 
 4. Launch Application
@@ -70,10 +79,10 @@ the bot url is `http(s)://host:port/chat`
 ## Credits
 - [ChatGPT](https://chat.openai.com/chat) from [OpenAI](https://openai.com)
 - [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) for reverse engineering ChatGPT APIs
-- [terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT) for reverse engineering ChatGPT APIs and bypass cloudflare
 
 ## Disclaimer
 This is a personal project and is not affiliated with OpenAI in any way.
 
 ## Changlog
-- 2022-12-14: Change to use [pyChatGPT](https://github.com/terry3041/pyChatGPT
+- 2023-02-12: Change back to use [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) 
+- 2022-12-14: Change to use [pyChatGPT](https://github.com/terry3041/pyChatGPT)
