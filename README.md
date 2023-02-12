@@ -6,6 +6,8 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 ## Screeeshots
 <img src="https://user-images.githubusercontent.com/4464307/206640973-a9790f2f-2452-4edc-b82f-e37bfface7dd.png" width="250"/>
 
+如希望体验该机器人，需加入“3DS电影”企业，请发送邮件到admin@sheepig.top申请（该邮箱不处理其他事务）
+
 ## Features
 - [x] Reply to specific messages / 回复用户信息
 - [x] Can reset conversation thread with the `/reset` command / 发送 `/reset` 来重置对话
