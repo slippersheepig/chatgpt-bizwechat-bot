@@ -1,4 +1,5 @@
-pyChatGPT
+revChatGPT
+openaiauth
 tornado
 requests
 Crypto
