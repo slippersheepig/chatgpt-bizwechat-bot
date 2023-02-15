@@ -31,7 +31,8 @@ class ChatBotWithExpiration:
         try:
             prev_text = ""
             for data in self.bot.ask(text):
-                response = data["message"][len(prev_text) :]
+                prev_text = prev_text + data["message"][len(prev_text) :]
+            response = prev_text
         except Exception as e:
             logging.error("[Chat-Bot] Request ChatGPT failed. %s", e)
             response = self.err_msg
