@@ -1,6 +1,6 @@
 import logging
 from datetime import datetime
-from revChatGPT.Proxied import Chatbot
+from revChatGPT.V1 import Chatbot
 
 
 class ChatBotWithExpiration:
@@ -29,7 +29,9 @@ class ChatBotWithExpiration:
         """
         logging.info("[Chat-Bot] requesting ChatGPT: %s", text)
         try:
-            response = self.bot.ask(text)["message"]
+            prev_text = ""
+            for data in self.bot.ask(text):
+                response = data["message"][len(prev_text) :]
         except Exception as e:
             logging.error("[Chat-Bot] Request ChatGPT failed. %s", e)
             response = self.err_msg
