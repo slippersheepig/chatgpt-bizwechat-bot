@@ -27,7 +27,6 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 
 ### Install with Docker Compose
 ```bash
-version: '3'
 services:
   chatgpt:
     image: sheepgreen/chatgpt-wework #如果是arm架构，换成chatgpt-wework:arm
