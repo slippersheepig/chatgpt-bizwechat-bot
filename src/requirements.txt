@@ -1,4 +1,4 @@
-revChatGPT
+revchatgpt==3.0.2
 tornado
 requests
 Crypto
