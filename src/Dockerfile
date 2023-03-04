@@ -1,7 +1,9 @@
 FROM python:slim
 
+RUN useradd -m appuser
+USER appuser
 WORKDIR /wx-chatbot
-ENV PATH="${PATH}:/usr/local/bin:/usr/bin:/bin"
+ENV PATH="/home/appuser/.local/bin:$PATH"
 
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
