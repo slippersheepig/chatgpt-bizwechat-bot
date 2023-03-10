@@ -1,11 +1,12 @@
-FROM python:slim
+FROM rust:slim-bookworm
+
+RUN apt update && apt install pip -y
 
 RUN useradd -m appuser
 USER appuser
 WORKDIR /wx-chatbot
 ENV PATH="/home/appuser/.local/bin:$PATH"
-
 COPY . .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --break-system-packages --no-cache-dir -r requirements.txt
 
-CMD [ "python", "main.py" ]
+CMD [ "python3", "main.py" ]
