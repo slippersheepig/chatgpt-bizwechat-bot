@@ -29,7 +29,7 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 ```bash
 services:
   chatgpt:
-    image: sheepgreen/chatgpt-wework #如果是arm架构，换成chatgpt-wework:arm
+    image: sheepgreen/chatgpt-wework
 #   environment:
 #     - CHATGPT_BASE_URL=上面说的ChatGPT代理地址，不填默认使用作者的地址，可能存在请求频率等限制
     volumes:
