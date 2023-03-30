@@ -1,7 +1,5 @@
-FROM python:slim AS builder
-RUN apt update && apt install gcc curl -y
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y && apt install --reinstall libc6-dev -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+FROM rust:slim-bookworm AS builder
+RUN apt update && apt install pip -y
 RUN pip install --no-cache tiktoken
 
 FROM python:alpine
