@@ -1,5 +1,5 @@
-FROM rust:alpine AS builder
-RUN apk add --no-cache py3-pip
+FROM rust:slim AS builder
+RUN apt update && apt install pip -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 RUN pip install --no-cache --break-system-packages tiktoken
 
