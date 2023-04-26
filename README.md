@@ -20,7 +20,7 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 - Python 3
 - A BizWechat Coporation Account / 企业微信企业账号
 - Knowledge of how to deploy a self host bot in bizwechat / 了解如何搭建企业微信机器人 (如何获取 `Token`, `EncodingAESKey`, `CorpID`, `SECRET`, `agent_id` 等参数)
-- An [OpenAI](https://openai.com) account / [OpenAI](https://openai.com) 账号
+- Access Token（ 有效期约半个月，登录ChatGPT官方网页版后再打开https://chat.openai.com/api/auth/session ）
 - (optional but recommended) A ChatGPT proxy address, you can use [acheong08/ChatGPT-Proxy](https://github.com/acheong08/ChatGPT-Proxy) to host a bypass server yourself
 
 ## Getting started
@@ -64,8 +64,7 @@ wx-bot:
   SECRET: 
   agent_id: 
 chatgpt: 
-  email: 直接填邮箱，无需引号包含
-  password: 直接填密码，无需引号包含
+  access_token: 粘贴上方获取的access token，无需引号包含
 ```
 
 4. Launch Application
