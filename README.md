@@ -21,7 +21,6 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 - A BizWechat Coporation Account / 企业微信企业账号
 - Knowledge of how to deploy a self host bot in bizwechat / 了解如何搭建企业微信机器人 (如何获取 `Token`, `EncodingAESKey`, `CorpID`, `SECRET`, `agent_id` 等参数)
 - Access Token（ 有效期约半个月，登录ChatGPT官方网页版后再打开https://chat.openai.com/api/auth/session ）
-- (optional but recommended) A ChatGPT proxy address, you can use [acheong08/ChatGPT-Proxy](https://github.com/acheong08/ChatGPT-Proxy) to host a bypass server yourself
 
 ## Getting started
 
@@ -31,7 +30,7 @@ services:
   chatgpt:
     image: sheepgreen/chatgpt-wework
 #   environment:
-#     - CHATGPT_BASE_URL=上面说的ChatGPT代理地址，不填默认使用作者的地址，可能存在请求频率等限制
+#     - CHATGPT_BASE_URL=ChatGPT代理地址，不填默认使用作者的地址，可能存在请求频率等限制
     volumes:
       - ./config.yaml:/wx-chatbot/config.yaml
     ports:
