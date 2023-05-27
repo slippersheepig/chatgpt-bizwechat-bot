@@ -63,7 +63,8 @@ wx-bot:
   SECRET: 
   agent_id: 
 chatgpt: 
-  access_token: 粘贴上方获取的access token，无需引号包含
+  email: 直接填邮箱，无需引号包含
+  password: 直接填密码，无需引号包含
 ```
 
 4. Launch Application
