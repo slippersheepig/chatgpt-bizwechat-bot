@@ -1,4 +1,4 @@
-curl_cffi
+setuptools
 revchatgpt
 tornado
 requests
