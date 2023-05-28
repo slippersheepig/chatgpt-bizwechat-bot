@@ -3,3 +3,4 @@ tornado
 requests
 Crypto
 pycryptodome
+curl-cffi
