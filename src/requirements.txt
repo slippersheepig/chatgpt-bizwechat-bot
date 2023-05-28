@@ -1,4 +1,4 @@
-wheels
+curl_cffi
 revchatgpt
 tornado
 requests
