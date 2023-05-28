@@ -1,4 +1,5 @@
 setuptools
+wheel
 revchatgpt
 tornado
 requests
