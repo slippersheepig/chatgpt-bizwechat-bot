@@ -1,6 +1,6 @@
+wheels
 revchatgpt
 tornado
 requests
 Crypto
 pycryptodome
-curl-cffi
