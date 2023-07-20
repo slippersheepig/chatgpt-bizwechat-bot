@@ -1,5 +1,5 @@
-openaiauth==1.0.2
-revchatgpt==5.2.0
+openaiauth
+revchatgpt
 tornado
 requests
 Crypto
