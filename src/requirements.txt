@@ -1,4 +1,3 @@
-openaiauth
 revchatgpt
 tornado
 requests
