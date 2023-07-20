@@ -3,10 +3,8 @@ A BizWechat Bot that integrates with OpenAI's [ChatGPT](https://openai.com/blog/
 
 基于 [acheong08/ChatGPT](https://github.com/acheong08/ChatGPT) 开发的企业微信聊天机器人
 
-## Screeeshots
-<img src="https://user-images.githubusercontent.com/4464307/206640973-a9790f2f-2452-4edc-b82f-e37bfface7dd.png" width="250"/>
-
-如希望体验该机器人，需加入“3DS电影”企业，请发送邮件到admin@sheepig.top申请（该邮箱不处理其他事务）
+## Attension
+服务器的IP不能被BAN，我没有IP测试项目是否可用，请自行尝试
 
 ## Features
 - [x] Reply to specific messages / 回复用户信息
